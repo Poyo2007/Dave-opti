@@ -496,8 +496,6 @@ class PlayState extends MusicBeatState
 			boyfriend.color = sunsetColor;
 		}
 
-		add(gf);
-
 		add(dad);
 		add(dadmirror);
 		add(boyfriend);
@@ -590,6 +588,8 @@ class PlayState extends MusicBeatState
 				engineName = 'Bambi ';
 			case 2:
 				engineName = 'Tristan ';
+			case 2:
+				engineName = 'Poyo';
 		}
 		var creditsText:Bool = credits != '';
 		var textYPos:Float = healthBarBG.y + 50;
@@ -621,9 +621,6 @@ class PlayState extends MusicBeatState
 			case 'splitathon':
 				preload('splitathon/Bambi_WaitWhatNow');
 				preload('splitathon/Bambi_ChillingWithTheCorn');
-			case 'insanity':
-				preload('dave/redsky');
-				preload('dave/redsky_insanity');
 		}
 
 		scoreTxt = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 150, healthBarBG.y + 40, 0, "", 20);
@@ -635,7 +632,7 @@ class PlayState extends MusicBeatState
 		add(scoreTxt);
 
 		creditText = new FlxText(876, 530, 348);
-        creditText.text = 'PORTED BY\nM.A.JIGSAW AND SIROX';
+        creditText.text = 'PORTED BY\nM.A.JIGSAW\nSIROX\n OPTIMIZED BY RP4';
         creditText.setFormat(Paths.font("comic.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         creditText.scrollFactor.set();
         add(creditText);		
@@ -693,8 +690,6 @@ class PlayState extends MusicBeatState
 		{
 			switch (curSong.toLowerCase())
 			{
-				case 'house' | 'insanity' | 'furiosity' | 'polygonized' | 'supernovae' | 'glitch' | 'blocked' | 'corn-theft' | 'maze' | 'splitathon' | 'cheating' | 'unfairness':
-					schoolIntro(doof);
 				default:
 					startCountdown();
 			}
@@ -722,9 +717,6 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.75, 0.75);
 				bg.active = false;
-
-				sprites.add(bg);
-				add(bg);
 	
 				var stageHills:FlxSprite = new FlxSprite(-225, -125).loadGraphic(Paths.image('dave/hills'));
 				stageHills.setGraphicSize(Std.int(stageHills.width * 1.25));
@@ -732,9 +724,6 @@ class PlayState extends MusicBeatState
 				stageHills.antialiasing = true;
 				stageHills.scrollFactor.set(0.8, 0.8);
 				stageHills.active = false;
-				
-				sprites.add(stageHills);
-				add(stageHills);
 	
 				var gate:FlxSprite = new FlxSprite(-200, -125).loadGraphic(Paths.image('dave/gate'));
 				gate.setGraphicSize(Std.int(gate.width * 1.2));
@@ -742,18 +731,12 @@ class PlayState extends MusicBeatState
 				gate.antialiasing = true;
 				gate.scrollFactor.set(0.9, 0.9);
 				gate.active = false;
-
-				sprites.add(gate);
-				add(gate);
 	
 				var stageFront:FlxSprite = new FlxSprite(-225, -125).loadGraphic(Paths.image('dave/grass'));
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.2));
 				stageFront.updateHitbox();
 				stageFront.antialiasing = true;
 				stageFront.active = false;
-				
-				sprites.add(stageFront);
-				add(stageFront);
 
 				UsingNewCam = true;
 				if (SONG.song.toLowerCase() == 'insanity')
@@ -762,7 +745,6 @@ class PlayState extends MusicBeatState
 					bg.alpha = 0.75;
 					bg.active = true;
 					bg.visible = false;
-					add(bg);
 					// below code assumes shaders are always enabled which is bad
 					var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
 					testshader.waveAmplitude = 0.1;
@@ -794,44 +776,36 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.9, 0.9);
 				bg.active = false;
-				sprites.add(bg);
 	
 				var hills:FlxSprite = new FlxSprite(-250, 200).loadGraphic(Paths.image('bambi/orangey hills'));
 				hills.antialiasing = true;
 				hills.scrollFactor.set(0.9, 0.7);
 				hills.active = false;
-				sprites.add(hills);
 	
 				var farm:FlxSprite = new FlxSprite(150, 250).loadGraphic(Paths.image('bambi/funfarmhouse'));
 				farm.antialiasing = true;
 				farm.scrollFactor.set(1.1, 0.9);
 				farm.active = false;
-				sprites.add(farm);
 				
 				var foreground:FlxSprite = new FlxSprite(-400, 600).loadGraphic(Paths.image('bambi/grass lands'));
 				foreground.antialiasing = true;
 				foreground.active = false;
-				sprites.add(foreground);
 				
 				var cornSet:FlxSprite = new FlxSprite(-350, 325).loadGraphic(Paths.image('bambi/Cornys'));
 				cornSet.antialiasing = true;
 				cornSet.active = false;
-				sprites.add(cornSet);
 				
 				var cornSet2:FlxSprite = new FlxSprite(1050, 325).loadGraphic(Paths.image('bambi/Cornys'));
 				cornSet2.antialiasing = true;
 				cornSet2.active = false;
-				sprites.add(cornSet2);
 				
 				var fence:FlxSprite = new FlxSprite(-350, 450).loadGraphic(Paths.image('bambi/crazy fences'));
 				fence.antialiasing = true;
 				fence.active = false;
-				sprites.add(fence);
 	
 				var sign:FlxSprite = new FlxSprite(0, 500).loadGraphic(Paths.image('bambi/Sign'));
 				sign.antialiasing = true;
 				sign.active = false;
-				sprites.add(sign);
 
 				if (curStage == 'bambiFarmNight')
 				{
@@ -854,15 +828,6 @@ class PlayState extends MusicBeatState
 					fence.color = sunsetColor;
 					sign.color = sunsetColor;
 				}
-				
-				add(bg);
-				add(hills);
-				add(farm);
-				add(foreground);
-				add(cornSet);
-				add(cornSet2);
-				add(fence);
-				add(sign);
 	
 				UsingNewCam = true;
 			case 'bonus-song' | 'glitch' | 'secret':
@@ -872,9 +837,6 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.75, 0.75);
 				bg.active = false;
-				
-				sprites.add(bg);
-				add(bg);
 	
 				var stageHills:FlxSprite = new FlxSprite(-225, -125).loadGraphic(Paths.image('dave/hills_night'));
 				stageHills.setGraphicSize(Std.int(stageHills.width * 1.25));
@@ -882,9 +844,6 @@ class PlayState extends MusicBeatState
 				stageHills.antialiasing = true;
 				stageHills.scrollFactor.set(0.8, 0.8);
 				stageHills.active = false;
-
-				sprites.add(stageHills);
-				add(stageHills);
 	
 				var gate:FlxSprite = new FlxSprite(-225, -125).loadGraphic(Paths.image('dave/gate_night'));
 				gate.setGraphicSize(Std.int(gate.width * 1.2));
@@ -892,9 +851,6 @@ class PlayState extends MusicBeatState
 				gate.antialiasing = true;
 				gate.scrollFactor.set(0.9, 0.9);
 				gate.active = false;
-
-				sprites.add(gate);
-				add(gate);
 	
 				var stageFront:FlxSprite = new FlxSprite(-225, -125).loadGraphic(Paths.image('dave/grass_night'));
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.2));
@@ -902,14 +858,10 @@ class PlayState extends MusicBeatState
 				stageFront.antialiasing = true;
 				stageFront.active = false;
 
-				sprites.add(stageFront);
-				add(stageFront);
-
 				UsingNewCam = true;
 			case 'polygonized' | 'furiosity' | 'cheating' | 'unfairness':
 				defaultCamZoom = 0.9;
 				var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('dave/redsky'));
-				bg.active = true;
 	
 				switch (SONG.song.toLowerCase())
 				{
@@ -923,9 +875,6 @@ class PlayState extends MusicBeatState
 						bg.loadGraphic(Paths.image('dave/redsky'));
 						curStage = 'daveEvilHouse';
 				}
-				
-				sprites.add(bg);
-				add(bg);
 				// below code assumes shaders are always enabled which is bad
 				// i wouldnt consider this an eyesore though
 				var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
@@ -945,9 +894,6 @@ class PlayState extends MusicBeatState
 				bg.antialiasing = true;
 				bg.scrollFactor.set(0.9, 0.9);
 				bg.active = false;
-				
-				sprites.add(bg);
-				add(bg);
 	
 				var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
@@ -955,9 +901,6 @@ class PlayState extends MusicBeatState
 				stageFront.antialiasing = true;
 				stageFront.scrollFactor.set(0.9, 0.9);
 				stageFront.active = false;
-
-				sprites.add(stageFront);
-				add(stageFront);
 	
 				var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
 				stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
@@ -965,9 +908,6 @@ class PlayState extends MusicBeatState
 				stageCurtains.antialiasing = true;
 				stageCurtains.scrollFactor.set(1.3, 1.3);
 				stageCurtains.active = false;
-	
-				sprites.add(stageCurtains);
-				add(stageCurtains);
 		}
 		return sprites;
 	}

@@ -139,6 +139,8 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -5, 2);
 
 				playAnim('idle');
+				
+				setGraphicSize(Std.int(width * 4));
 			case 'dave-old':
 				// DAVE SHITE ANIMATION LOADING CODE
 				tex = Paths.getSparrowAtlas('dave/dave_old');
@@ -156,7 +158,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -1, -3);
 				globaloffset[1] = 100;
 
-				setGraphicSize(Std.int(width * 1.1));
+				setGraphicSize(Std.int(width * 4.1));
 				updateHitbox();
 
 				playAnim('idle');
@@ -179,6 +181,8 @@ class Character extends FlxSprite
 				addOffset("scared", 0, -2);
 	
 				playAnim('idle');
+				
+				setGraphicSize(Std.int(width * 4));
 			case 'dave-annoyed-3d':
 				frames = Paths.getSparrowAtlas('dave/Dave_insanity_3d');
 				animation.addByPrefix('idle', 'DaveAngry idle dance', 24, false);
@@ -194,7 +198,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN");
 				globaloffset[0] = 150;
 				globaloffset[1] = 450; //this is the y
-				furiosityScale = 1.5;
+				furiosityScale = 4.5;
 				setGraphicSize(Std.int(width / furiosityScale));
 			   updateHitbox();
 			   antialiasing = false;
@@ -216,6 +220,8 @@ class Character extends FlxSprite
 				addOffset("singLEFT", 49, -9);
 				addOffset("singDOWN", 0, -10);
 				antialiasing = false;
+				
+				setGraphicSize(Std.int(width * 4));
 		
 				playAnim('idle');
 			case 'dave-angey':
@@ -278,7 +284,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 150, 50);
 				globaloffset[0] = 150 * 1.3;
 				globaloffset[1] = 450 * 1.3; //this is the y
-				setGraphicSize(Std.int((width * 1.3) / furiosityScale));
+				setGraphicSize(Std.int((width * 4.3) / furiosityScale));
 				updateHitbox();
 				antialiasing = false;
 		
@@ -318,6 +324,8 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
+				
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 
@@ -361,6 +369,7 @@ class Character extends FlxSprite
 				addOffset('scared', 6, 3);
 	
 				playAnim('idle');
+				setGraphicSize(Std.int(width * 4));
 
 				nativelyPlayable = true;
 	
@@ -403,6 +412,8 @@ class Character extends FlxSprite
 				addOffset('scared', 6, 3);
 	
 				playAnim('idle');
+				
+				setGraphicSize(Std.int(width * 4));
 
 				nativelyPlayable = true;
 	
@@ -432,6 +443,8 @@ class Character extends FlxSprite
 				addOffset("singLEFTmiss", 12, 24);
 				addOffset("singDOWNmiss", -11, -19);
 				addOffset("hey", 7, 4);
+				
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 
@@ -454,6 +467,8 @@ class Character extends FlxSprite
 				addOffset("singDOWN");
 
 				playAnim('idle');
+				
+				setGraphicSize(Std.int(width * 4));
 
 				nativelyPlayable = true;
 
@@ -550,6 +565,8 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				playAnim('idle');
+				
+				setGraphicSize(Std.int(width * 4));
 
 				nativelyPlayable = true;
 				flipX = true;
@@ -572,6 +589,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('firstDeath', "MARCELLO dead0", 24, false);
 				animation.addByPrefix('deathLoop', "MARCELLO dead0", 24, true);
 				animation.addByPrefix('deathConfirm', "MARCELLO dead0", 24, false);
+				
+				setGraphicSize(Std.int(width * 4));
 	
 				addOffset('idle');
 				addOffset("singUP", -16, 3);
@@ -602,6 +621,8 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", -45, -11);
 				addOffset("singLEFT", -10, -9);
 				addOffset("singDOWN", -12, -48);
+				
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 
@@ -618,6 +639,8 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", -66, 13);
 				addOffset("singLEFT", 2, -4);
 				addOffset("singDOWN", -14, -23);
+				
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 
@@ -640,6 +663,8 @@ class Character extends FlxSprite
 				addOffset("scared", -15, 11);
 				addOffset("what", -3, 1);
 				addOffset("happy", -3, 1);
+				
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 				
@@ -656,6 +681,7 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", -34, -6);
 				addOffset("singLEFT", -3, 6);
 				addOffset("singDOWN", -20, -10);
+				setGraphicSize(Std.int(width * 4));
 		
 				playAnim('idle');
 				
@@ -695,6 +721,8 @@ class Character extends FlxSprite
 				addOffset('deathConfirm', 12, 36);
 				addOffset('scared', 6, 3);
 				addOffset('hit', 13, 25);
+				
+				setGraphicSize(Std.int(width * 4));
 	
 				playAnim('idle');
 
@@ -714,6 +742,8 @@ class Character extends FlxSprite
 				addOffset('singDOWN');
 				addOffset('singUP', 0, 20);
 				addOffset('singRIGHT');
+	
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 			case 'bambi-bevel':
@@ -749,6 +779,8 @@ class Character extends FlxSprite
 				addOffset('firstDeath', 37, 11);
 				addOffset('deathLoop', 37, 5);
 				addOffset('scared', -24, -10);
+				
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 
@@ -784,6 +816,8 @@ class Character extends FlxSprite
 				addOffset("singDOWNmiss", -10, -50);
 				addOffset("hey", 3, 21);
 				addOffset('scared', -24, -10);
+				
+				setGraphicSize(Std.int(width * 4));
 
 				playAnim('idle');
 
